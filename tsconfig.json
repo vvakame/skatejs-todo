@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"lib": [
+			"es2016",
+			"dom"
+		],
+		"baseUrl": "./definitions/",
+		"typeRoots": [
+			"./definitions/"
+		],
+		"types": [
+			"skatejs",
+			"whatwg-shadowdom",
+			"whatwg-customelements"
+		],
+		"jsx": "react",
+		"jsxFactory": "skate.h",
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"sourceMap": true,
+		"forceConsistentCasingInFileNames": true,
+		"noEmitHelpers": true,
+		"importHelpers": false
+	},
+	"include": [
+		"./src/**/*.tsx"
+	]
+}
