@@ -11,9 +11,9 @@
   "author": "vvakame",
   "license": "MIT",
   "dependencies": {
-    "skatejs": "^4.1.0",
+    "skatejs": "^4.1.1",
     "skatejs-web-components": "^5.0.0",
-    "tslib": "^1.1.0"
+    "tslib": "^1.2.0"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^0.3.2",
