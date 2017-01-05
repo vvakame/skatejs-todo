@@ -11,8 +11,6 @@
 			"./definitions/"
 		],
 		"types": [
-			"skatejs",
-			"whatwg-shadowdom",
 			"whatwg-customelements"
 		],
 		"jsx": "react",
@@ -22,7 +20,8 @@
 		"sourceMap": true,
 		"forceConsistentCasingInFileNames": true,
 		"noEmitHelpers": true,
-		"importHelpers": false
+		"importHelpers": false,
+		"newLine": "LF"
 	},
 	"include": [
 		"./src/**/*.tsx"

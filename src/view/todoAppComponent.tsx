@@ -6,8 +6,12 @@ import Todo from "../model/todo";
 import TodoEditComponent from "./todoEditComponent";
 import TodoListComponent from "./todoListComponent";
 
-export default class TodoAppComponent extends skate.Component implements skate.OnRenderCallback {
-    static get props() {
+interface TodoAppProps {
+    manager: TodoManager;
+}
+
+export default class TodoAppComponent extends skate.Component<TodoAppProps> {
+    static get props(): skate.ComponentProps<TodoAppComponent, TodoAppProps> {
         return {
             manager: {
                 default: () => new TodoManager(),
@@ -18,13 +22,12 @@ export default class TodoAppComponent extends skate.Component implements skate.O
     manager: TodoManager;
 
     renderCallback() {
-        const anyProps: any = {};
         return (
             <div>
                 <h1>TODO List</h1>
-                <TodoEditComponent manager={this.manager} {...anyProps} />
+                <TodoEditComponent manager={this.manager} />
                 <hr />
-                <TodoListComponent manager={this.manager} {...anyProps} />
+                <TodoListComponent manager={this.manager} />
             </div>
         );
     }

@@ -5,12 +5,19 @@ import Todo from "../model/todo";
 
 import TodoItemComponent from "./todoItemComponent";
 
-export default class TodoListComponent extends skate.Component implements skate.OnRenderCallback {
-    static get props() {
+interface TodoListProps {
+    manager: TodoManager;
+    list?: Todo[];
+}
+
+export default class TodoListComponent extends skate.Component<TodoListProps> {
+    static get props(): skate.ComponentProps<TodoListComponent, TodoListProps> {
         return {
             manager: {
-                set(elem: TodoListComponent, data: { name: string; newValue: TodoManager; }) {
-                    data.newValue.addOnChangeListener(elem.onListChangeListener)
+                set(elem, data) {
+                    if (data.newValue) {
+                        data.newValue.addOnChangeListener(elem.onListChangeListener);
+                    }
                 }
             },
             list: skate.prop.array(),
@@ -39,9 +46,8 @@ export default class TodoListComponent extends skate.Component implements skate.
     }
 
     renderCallback() {
-        const anyProps: any = {};
         const todoComponentList = this.list.map(todo => {
-            return <TodoItemComponent manager={this.manager} item={todo} {...anyProps} />;
+            return <TodoItemComponent manager={this.manager} item={todo} />;
         });
         return (
             <div>

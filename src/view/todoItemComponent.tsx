@@ -3,8 +3,13 @@ import * as skate from "skatejs";
 import Todo from "../model/todo";
 import TodoManager from "../model/todoManager";
 
-export default class TodoItemComponent extends skate.Component implements skate.OnRenderCallback {
-    static get props() {
+interface TodoItemProps {
+    manager: TodoManager;
+    item: Todo;
+}
+
+export default class TodoItemComponent extends skate.Component<TodoItemProps> {
+    static get props(): skate.ComponentProps<TodoItemComponent, TodoItemProps> {
         return {
             manager: {},
             item: {},

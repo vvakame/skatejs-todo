@@ -3,8 +3,14 @@ import * as skate from "skatejs";
 import TodoManager from "../model/todoManager";
 import Todo from "../model/todo";
 
-export default class TodoEditComponent extends skate.Component implements skate.OnRenderCallback {
-    static get props() {
+interface TodoEditProps {
+    manager: TodoManager;
+    text?: string;
+    dueDate?: Date;
+}
+
+export default class TodoEditComponent extends skate.Component<TodoEditProps> {
+    static get props(): skate.ComponentProps<TodoEditComponent, TodoEditProps> {
         return {
             manager: {},
             text: skate.prop.string(),
@@ -42,11 +48,10 @@ export default class TodoEditComponent extends skate.Component implements skate.
     }
 
     renderCallback() {
-        const anyProps: any = {};
         return (
             <div>
-                <input type="text" value={this.text} onChange={e => this.onTextChange(e)} {...anyProps} />
-                <input type="date" valueAsDate={this.dueDate} onChange={e => this.onDueDateChange(e)} {...anyProps} />
+                <input type="text" value={this.text} onChange={e => this.onTextChange(e)} />
+                <input type="date" valueAsDate={this.dueDate} onChange={e => this.onDueDateChange(e)} />
                 <button onClick={e => this.add()}>Add</button>
             </div>
         );
