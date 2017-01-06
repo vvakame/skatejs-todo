@@ -13,7 +13,7 @@
   "dependencies": {
     "skatejs": "^4.5.1",
     "skatejs-web-components": "^5.0.1",
-    "tslib": "^1.4.0"
+    "tslib": "^1.5.0"
   },
   "devDependencies": {
     "compression-webpack-plugin": "^0.3.2",
