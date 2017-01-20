@@ -20,7 +20,7 @@ export default class TodoListComponent extends skate.Component<TodoListProps> {
                     }
                 }
             },
-            list: skate.prop.array(),
+            list: skate.prop.array<Todo>(),
         };
     }
 

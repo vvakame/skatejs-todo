@@ -19,8 +19,7 @@
 		"strictNullChecks": true,
 		"sourceMap": true,
 		"forceConsistentCasingInFileNames": true,
-		"noEmitHelpers": true,
-		"importHelpers": false,
+		"importHelpers": true,
 		"newLine": "LF"
 	},
 	"include": [
